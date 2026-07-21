@@ -1,0 +1,36 @@
+Name: Alice Johnson
+Email: alice.johnson@email.com
+Phone: +1-555-0101
+
+SUMMARY
+-------
+Results-driven Software Engineer with 5 years of experience building scalable backend systems.
+Proficient in Python, FastAPI, and cloud-native architectures (AWS, GCP).
+
+SKILLS
+------
+Languages  : Python, Go, SQL
+Frameworks : FastAPI, Django, Flask, Celery
+Databases  : PostgreSQL, Redis, MongoDB
+DevOps     : Docker, Kubernetes, GitHub Actions, Terraform
+AI/ML      : scikit-learn, LangChain, OpenAI API integration
+
+EXPERIENCE
+----------
+Senior Backend Engineer — DataSync Inc. (2022 – Present)
+- Designed RESTful APIs serving 10M+ requests/day
+- Led migration of monolith to microservices (Docker + K8s)
+- Built an AI-powered document processing pipeline using LangChain + GPT-4
+
+Backend Engineer — CloudByte Ltd. (2019 – 2022)
+- Built data ingestion pipelines (Kafka, Airflow)
+- Reduced API latency by 40% through Redis caching
+
+EDUCATION
+---------
+B.Sc. Computer Science — State University (2019)
+
+CERTIFICATIONS
+--------------
+AWS Certified Developer – Associate
+Google Professional Cloud Developer

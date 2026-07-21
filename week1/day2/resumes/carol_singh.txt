@@ -1,0 +1,36 @@
+Name: Carol Singh
+Email: carol.singh@email.com
+Phone: +1-555-0303
+
+SUMMARY
+-------
+Machine Learning Engineer with 4 years of experience building and deploying NLP and
+computer-vision models in production. Strong Python background with deep learning expertise.
+
+SKILLS
+------
+Languages  : Python, R, SQL
+ML/DL      : PyTorch, TensorFlow, HuggingFace Transformers, scikit-learn, LangChain
+MLOps      : MLflow, DVC, Weights & Biases, SageMaker, Vertex AI
+Backend    : FastAPI, Flask, Docker
+Databases  : PostgreSQL, Pinecone (vector DB), BigQuery
+
+EXPERIENCE
+----------
+ML Engineer — NeuralWorks AI (2022 – Present)
+- Fine-tuned LLaMA and Mistral models for domain-specific Q&A systems
+- Built a RAG pipeline (LangChain + Pinecone) reducing hallucination rate by 35%
+- Deployed models as REST APIs (FastAPI + Docker) on AWS ECS
+
+Data Scientist — InsightData Corp. (2020 – 2022)
+- Developed churn prediction models (XGBoost, 92% AUC)
+- Automated ETL pipelines using Airflow and dbt
+
+EDUCATION
+---------
+M.Sc. Machine Learning — Tech University (2020)
+B.Sc. Mathematics & Computer Science — Central University (2018)
+
+PUBLICATIONS
+------------
+"Efficient RAG Architectures for Enterprise LLMs" — NeurIPS Workshop 2023

@@ -1,0 +1,33 @@
+Name: Bob Martinez
+Email: bob.martinez@email.com
+Phone: +1-555-0202
+
+SUMMARY
+-------
+Creative Graphic Designer with 6 years of experience in branding, UI/UX design,
+and digital media production. Passionate about visual storytelling.
+
+SKILLS
+------
+Tools      : Adobe Photoshop, Illustrator, Figma, Canva, InDesign
+Web        : HTML, CSS (basic), WordPress
+Soft Skills: Creativity, Client Communication, Project Management
+
+EXPERIENCE
+----------
+Senior Graphic Designer — BrandCraft Studio (2021 – Present)
+- Designed brand identities for 30+ clients across retail and hospitality sectors
+- Created UI mockups and prototypes in Figma for mobile apps
+
+Graphic Designer — PixelHouse Agency (2018 – 2021)
+- Produced social media assets, brochures, and packaging designs
+- Collaborated with marketing teams on campaigns reaching 500K+ audiences
+
+EDUCATION
+---------
+B.F.A. Graphic Design — Art Institute (2018)
+
+CERTIFICATIONS
+--------------
+Adobe Certified Professional – Photoshop
+Google UX Design Certificate (Coursera)
