@@ -1,0 +1,25 @@
+Senior AI/ML Engineer — AI Innovations Lab
+
+We're looking for a Senior AI/ML Engineer to join our growing AI team. You'll work on cutting-edge projects involving Large Language Models, recommendation systems, and production ML infrastructure.
+
+Responsibilities:
+- Design, train, and deploy machine learning models at scale (100K+ predictions/day)
+- Fine-tune and optimize Large Language Models (LLaMA, GPT, BERT) for domain-specific tasks
+- Build and maintain ML pipelines with automated training, evaluation, and deployment
+- Implement RAG (Retrieval-Augmented Generation) systems with vector databases
+- Collaborate with product teams to translate business requirements into ML solutions
+- Conduct A/B testing and experimental design for model improvements
+
+Required Qualifications:
+- 4+ years of experience in machine learning engineering or applied ML research
+- Strong proficiency in Python and ML frameworks (PyTorch, TensorFlow, HuggingFace)
+- Experience with LLMs: fine-tuning, prompt engineering, evaluation, deployment
+- Production ML experience: model serving, monitoring, A/B testing
+- Experience with cloud platforms (AWS SageMaker, GCP Vertex AI)
+- Familiarity with vector databases (Pinecone, Weaviate, Milvus)
+
+Preferred Qualifications:
+- Experience with distributed training and multi-GPU setups
+- Knowledge of reinforcement learning (RLHF, PPO)
+- Contributions to open-source ML projects
+- Experience with Kubernetes and container orchestration

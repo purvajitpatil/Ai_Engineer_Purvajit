@@ -1,0 +1,62 @@
+Name: David Kumar
+Email: david.kumar@email.com
+Phone: +1-555-0404
+LinkedIn: linkedin.com/in/davidkumar
+GitHub: github.com/davidkumar
+
+SUMMARY
+-------
+Senior Full-Stack Engineer with 7+ years of experience building scalable web applications and distributed systems. Expert in React, Node.js, and cloud-native architectures. Passionate about clean code, performance optimization, and mentoring junior developers.
+
+SKILLS
+------
+Frontend    : React, Next.js, TypeScript, Tailwind CSS, Redux, GraphQL
+Backend     : Node.js, Express, Python, FastAPI, Django, Go (basic)
+Databases   : PostgreSQL, MongoDB, Redis, Elasticsearch, DynamoDB
+DevOps      : AWS (EC2, S3, Lambda, ECS), Docker, Kubernetes, Terraform, GitHub Actions
+Testing     : Jest, Cypress, Playwright, Pytest
+AI/ML       : OpenAI API, LangChain, Vector Databases (Pinecone), Basic TensorFlow
+Tools       : Git, Jira, Confluence, Datadog, Sentry
+
+EXPERIENCE
+----------
+Senior Full-Stack Engineer — TechCorp Solutions (2021 – Present)
+- Led development of a real-time analytics dashboard serving 500K+ daily active users
+- Architected microservices backend handling 20M+ API requests/day with 99.9% uptime
+- Implemented AI-powered search using Elasticsearch + OpenAI embeddings
+- Reduced page load time by 60% through code splitting and lazy loading
+- Mentored team of 5 junior developers, conducted 100+ code reviews
+
+Full-Stack Developer — StartupXYZ (2018 – 2021)
+- Built MVP from scratch that acquired 10K users in first 3 months
+- Developed payment integration with Stripe handling $2M+ monthly transactions
+- Created automated testing pipeline reducing bug reports by 45%
+
+Software Developer — WebAgency Inc. (2016 – 2018)
+- Developed responsive web applications for 20+ clients across e-commerce and healthcare
+- Implemented RESTful APIs and GraphQL endpoints
+- Optimized database queries reducing response times by 35%
+
+EDUCATION
+---------
+B.Sc. Computer Science — University of California, Berkeley (2016)
+- GPA: 3.8/4.0
+- Relevant Coursework: Data Structures, Algorithms, Database Systems, Web Development
+
+CERTIFICATIONS
+--------------
+AWS Certified Solutions Architect – Associate
+Meta Front-End Developer Certificate
+Google Cloud Professional Cloud Developer
+
+PROJECTS
+--------
+- OpenSource Contributor: Contributed to Next.js, React Query, and Prisma ORM
+- Tech Blog: Write about React performance and system design (5K+ monthly readers)
+- Side Project: Built and sold a SaaS tool for automated code reviews ($50K ARR)
+
+ACHIEVEMENTS
+------------
+- Speaker at ReactConf 2023: "Scaling React Applications to 1M Users"
+- Published article in JavaScript Weekly: "Advanced React Patterns"
+- Hackathon winner: Built AI-powered code review tool in 48 hours

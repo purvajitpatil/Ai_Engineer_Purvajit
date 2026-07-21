@@ -1,0 +1,74 @@
+Name: Michael Rodriguez
+Email: michael.rodriguez@email.com
+Phone: +1-555-0606
+LinkedIn: linkedin.com/in/michaelrodriguez
+GitHub: github.com/mrodriguez
+
+SUMMARY
+-------
+Machine Learning Engineer with 4+ years of experience building and deploying production ML systems. Specialized in NLP, recommendation systems, and MLOps. Strong software engineering background with expertise in PyTorch and distributed training.
+
+SKILLS
+------
+ML/DL       : PyTorch, TensorFlow, HuggingFace Transformers, scikit-learn, XGBoost
+MLOps       : MLflow, Weights & Biases, DVC, SageMaker, Vertex AI, Kubeflow
+NLP         : BERT, GPT, LLaMA, Fine-tuning, RAG, Embeddings, Semantic Search
+Backend     : Python, FastAPI, Flask, gRPC, Docker, Kubernetes
+Databases   : PostgreSQL, Pinecone, Weaviate, Redis, MongoDB
+Cloud       : AWS (SageMaker, EC2, S3, Lambda), GCP (Vertex AI, GCS)
+Languages   : Python, SQL, Bash, Basic C++
+Tools       : Git, Jira, Confluence, Datadog, Prometheus
+
+EXPERIENCE
+----------
+Senior ML Engineer — AI Innovations Lab (2022 – Present)
+- Built recommendation system serving 1M+ predictions/day with <50ms latency
+- Fine-tuned LLaMA 2 70B for domain-specific Q&A reducing hallucination by 40%
+- Implemented RAG pipeline with vector search improving answer accuracy by 25%
+- Designed A/B testing framework for ML models with automated metrics tracking
+- Led migration from Jupyter notebooks to production-ready ML pipelines
+
+ML Engineer — DataScience Corp (2020 – 2022)
+- Developed sentiment analysis model achieving 94% accuracy on production data
+- Built real-time fraud detection system preventing $5M+ in annual losses
+- Implemented feature store reducing model training time by 50%
+- Created automated model retraining pipeline with drift detection
+
+Junior Data Scientist — TechAnalytics (2019 – 2020)
+- Built predictive models for customer churn (87% AUC)
+- Developed dashboards and reports for business stakeholders
+- Cleaned and preprocessed large datasets (10M+ rows)
+
+EDUCATION
+---------
+M.Sc. Computer Science (ML Specialization) — Stanford University (2019)
+- Thesis: "Efficient Fine-tuning of Large Language Models for Low-Resource Languages"
+- GPA: 3.9/4.0
+
+B.Sc. Mathematics — University of Michigan (2017)
+- GPA: 3.8/4.0
+- Minor: Computer Science
+
+CERTIFICATIONS
+--------------
+AWS Machine Learning Specialty
+Google Professional Machine Learning Engineer
+Deep Learning Specialization (Coursera)
+
+PUBLICATIONS
+------------
+- "Scalable RAG Architectures for Enterprise LLMs" — NeurIPS Workshop 2023
+- "Efficient Fine-tuning with LoRA: A Practical Guide" — Towards Data Science
+- "Real-time ML Inference at Scale" — ML Conference 2022
+
+PROJECTS
+--------
+- LLM-Benchmark: Open-source LLM evaluation framework (1K+ GitHub stars)
+- MLOps-Template: Production-ready ML project template with CI/CD
+- TechBlog: Articles about ML engineering and production systems
+
+ACHIEVEMENTS
+------------
+- Kaggle Grandmaster: Top 50 worldwide in Competitions
+- Hackathon Winner: Built AI-powered medical diagnosis tool in 24 hours
+- Open Source: Contributed to HuggingFace Transformers and PyTorch Lightning

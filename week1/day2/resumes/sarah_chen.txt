@@ -1,0 +1,68 @@
+Name: Sarah Chen
+Email: sarah.chen@email.com
+Phone: +1-555-0505
+LinkedIn: linkedin.com/in/sarahchen
+GitHub: github.com/sarahchen
+
+SUMMARY
+-------
+DevOps/Platform Engineer with 5+ years of experience building and scaling cloud infrastructure. Expert in Kubernetes, Terraform, and CI/CD pipelines. Strong background in SRE practices, monitoring, and incident response. Passionate about developer experience and automation.
+
+SKILLS
+------
+Cloud       : AWS (EKS, RDS, SQS, CloudFront), GCP (GKE, Cloud SQL), Azure (AKS)
+IaC         : Terraform, CloudFormation, Pulumi, Ansible
+Containers  : Docker, Kubernetes, Helm, ArgoCD, Istio
+CI/CD       : GitHub Actions, GitLab CI, Jenkins, CircleCI, Argo Workflows
+Monitoring  : Prometheus, Grafana, Datadog, New Relic, ELK Stack
+Scripting   : Python, Bash, Go, PowerShell
+Databases   : PostgreSQL, MongoDB, Redis, DynamoDB, Cloud-native SQL
+Security    : Vault, AWS IAM, OAuth2, RBAC, Network Policies
+Languages   : Python, Go, TypeScript, Bash
+
+EXPERIENCE
+----------
+Senior Platform Engineer — CloudScale Inc. (2022 – Present)
+- Designed and implemented Kubernetes platform serving 200+ microservices
+- Built GitOps workflow with ArgoCD reducing deployment time from 2 hours to 5 minutes
+- Implemented service mesh (Istio) improving inter-service communication reliability
+- Created self-service developer portal reducing infrastructure requests by 70%
+- Led migration from monolith to microservices architecture
+- On-call SRE: Maintained 99.95% SLA for critical production systems
+
+DevOps Engineer — DataFlow Systems (2019 – 2022)
+- Automated infrastructure provisioning with Terraform (100+ AWS resources)
+- Built CI/CD pipelines for 50+ repositories with automated testing and security scans
+- Implemented centralized logging and monitoring stack (ELK + Prometheus + Grafana)
+- Reduced cloud costs by 35% through resource optimization and spot instances
+- Created runbooks and incident response procedures reducing MTTR by 40%
+
+Junior DevOps Engineer — TechStartup (2018 – 2019)
+- Set up Docker containers and basic Kubernetes clusters
+- Automated deployment scripts reducing manual errors
+- Managed Linux servers and basic network configurations
+
+EDUCATION
+---------
+B.Sc. Information Technology — Georgia Institute of Technology (2018)
+- GPA: 3.7/4.0
+- Relevant Courseworks: Cloud Computing, Distributed Systems, Network Security
+
+CERTIFICATIONS
+--------------
+Certified Kubernetes Administrator (CKA)
+AWS Certified DevOps Engineer – Professional
+HashiCorp Certified Terraform Associate
+Google Cloud Professional Cloud DevOps Engineer
+
+PROJECTS
+--------
+- K8s-AutoScaler: Open-source Kubernetes autoscaler with custom metrics (500+ GitHub stars)
+- DevOpsBlog: Technical blog about platform engineering (10K+ monthly readers)
+- HomeLab: Self-hosted infrastructure with GitOps, monitoring, and disaster recovery
+
+ACHIEVEMENTS
+-
+- KubeCon Speaker 2023: "Scaling Kubernetes to 10K Pods"
+- Reduced production incidents by 60% through improved monitoring and alerting
+- Mentored 3 junior engineers into mid-level positions

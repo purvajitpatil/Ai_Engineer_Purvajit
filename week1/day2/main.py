@@ -1,6 +1,7 @@
 import os
 import time
 import json
+import sys
 from pathlib import Path
 from dotenv import load_dotenv
 from groq import Groq
@@ -17,6 +18,24 @@ if not my_api_key:
 
 client = Groq(api_key=my_api_key)
 MODEL  = "llama-3.3-70b-versatile"
+
+def api_call_with_retry(messages, max_retries=3):
+    for attempt in range(max_retries):
+        try:
+            response = client.chat.completions.create(
+                model=MODEL,
+                messages=messages,
+                response_format={"type": "json_object"},
+            )
+            return response
+        except Exception as e:
+            if "429" in str(e) or "rate" in str(e).lower():
+                wait_time = 60 * (attempt + 1)
+                print(f"    Rate limited. Waiting {wait_time}s...")
+                time.sleep(wait_time)
+            else:
+                raise
+    raise Exception("Max retries exceeded")
 
 
 class JobD(BaseModel):
@@ -60,14 +79,11 @@ Return ONLY valid JSON matching this schema:
 Do NOT return schema fields like "properties", "title", or "type".
 Fill with actual values. Return null for missing numbers, [] for missing lists.
 """
-    response = client.chat.completions.create(
-        model=MODEL,
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": f"Analyze this job description:\n\n{job_description}"},
-        ],
-        response_format={"type": "json_object"},
-    )
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": f"Analyze this job description:\n\n{job_description}"},
+    ]
+    response = api_call_with_retry(messages)
     return JobD(**json.loads(response.choices[0].message.content))
 
 
@@ -82,21 +98,18 @@ Return ONLY valid JSON matching this schema:
 {resume_schema}
 Return null for missing values, [] for missing lists. Do not invent data.
 """
-    response = client.chat.completions.create(
-        model=MODEL,
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": f"Parse this resume:\n\n{resume_text}"},
-        ],
-        response_format={"type": "json_object"},
-    )
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": f"Parse this resume:\n\n{resume_text}"},
+    ]
+    response = api_call_with_retry(messages)
     return Resume(**json.loads(response.choices[0].message.content))
 
 
 def final_score(job: JobD, resume: Resume) -> MatchResult:
     match_schema = MatchResult.model_json_schema()
     prompt = f"""
-You are an HR recruiter. Compare the resume with the job description.
+You are an expert HR recruiter with 15+ years of experience. Compare the resume with the job description.
 
 JOB DESCRIPTION:
 {job.model_dump_json(indent=2)}
@@ -108,18 +121,22 @@ Return JSON matching this schema:
 {match_schema}
 
 The "details" dict must include:
-  - candidate_name
-  - matching_skills
-  - missing_important_skills
-  - experience_requirement_met
-  - overall_match_percentage
-  - final_verdict
+  - candidate_name: Full name of the candidate
+  - matching_skills: List of skills that directly match job requirements
+  - missing_important_skills: List of critical skills the candidate lacks
+  - experience_requirement_met: true/false with explanation
+  - overall_match_percentage: 0-100 score
+  - final_verdict: A detailed 3-4 sentence professional assessment explaining:
+    * Why the candidate scored this percentage
+    * Key strengths that match the role
+    * Critical gaps that need addressing
+    * Recommendation: Strong Hire / Consider / Skip with reasoning
+  - strengths: Top 3 specific strengths for this role
+  - weaknesses: Top 3 areas for improvement
+  - interview_focus: What to probe in technical interview
 """
-    response = client.chat.completions.create(
-        model=MODEL,
-        messages=[{"role": "user", "content": prompt}],
-        response_format={"type": "json_object"},
-    )
+    messages = [{"role": "user", "content": prompt}]
+    response = api_call_with_retry(messages)
     return MatchResult(**json.loads(response.choices[0].message.content))
 
 
@@ -142,6 +159,8 @@ def read_resume_file(file_path: Path) -> str | None:
         return read_pdf(file_path)
     elif file_path.suffix.lower() == ".docx":
         return read_docx(file_path)
+    elif file_path.suffix.lower() == ".txt":
+        return file_path.read_text(encoding="utf-8")
     return None
 
 
@@ -159,36 +178,43 @@ def print_candidate(label: str, candidate: dict):
     print(f"\n  {label}: {candidate['name']}")
     print(f"  Score : {candidate['score']}%  [{score_bar(candidate['score'])}]")
     for key, val in candidate["details"].items():
-        print(f"  {key.replace('_', ' ').title():<30}: {val}")
+        if key in ("strengths", "weaknesses", "interview_focus") and isinstance(val, list):
+            print(f"  {key.replace('_', ' ').title():<30}:")
+            for item in val:
+                print(f"    - {item}")
+        else:
+            print(f"  {key.replace('_', ' ').title():<30}: {val}")
 
 
-JOB_DESCRIPTION = """
-At Amazon, we are hiring Software Development Engineers (SDE-I).
+JOB_DESCRIPTIONS = {}
 
-Key Responsibilities:
-- Design and develop scalable solutions using cloud-native architectures and microservices.
-- Build and maintain resilient distributed systems that are scalable and fault-tolerant.
-- Write clean, maintainable code following best practices.
-- Work in an agile environment practicing CI/CD principles.
-- Leverage GenAI and AI-powered tools to enhance development productivity.
+def load_job_descriptions():
+    job_files = {
+        "sde": "job_description_sde.txt",
+        "ml": "job_description_ml.txt",
+        "fullstack": "job_description_fullstack.txt",
+        "devops": "job_description_devops.txt"
+    }
+    for key, filename in job_files.items():
+        filepath = Path(__file__).parent / filename
+        if filepath.exists():
+            JOB_DESCRIPTIONS[key] = filepath.read_text(encoding="utf-8")
 
-Basic Qualifications:
-- Proficiency in Python, Java, C++, Go, Rust, or TypeScript
-- Experience with data structures, algorithms, and object-oriented design
-- Bachelor's degree in Computer Science or related STEM field
-
-Preferred Qualifications:
-- Previous internship or project experience
-- Experience with AWS, SQL/NoSQL databases, AI tools
-- Strong problem-solving and communication skills
-"""
+load_job_descriptions()
 
 
 def main():
     divider("[AI]  AI RESUME EVALUATOR  -  Groq / LLaMA-3.3-70b")
 
-    print("\n[1/3] Parsing Job Description...")
-    job = parse_job_description(JOB_DESCRIPTION)
+    job_key = sys.argv[1] if len(sys.argv) > 1 else "sde"
+    
+    if job_key not in JOB_DESCRIPTIONS:
+        print(f"\n  [!] Unknown job: {job_key}")
+        print(f"  Available: {', '.join(JOB_DESCRIPTIONS.keys())}")
+        return
+
+    print(f"\n[1/3] Parsing Job Description...")
+    job = parse_job_description(JOB_DESCRIPTIONS[job_key])
     print(f"      Role              : {job.role}")
     print(f"      Min. Experience   : {job.minimum_experience} yrs")
     print(f"      Education         : {', '.join(job.education_requirements)}")
@@ -196,7 +222,7 @@ def main():
     resume_folder = Path(__file__).parent / "resumes"
     resume_folder.mkdir(exist_ok=True)
 
-    resume_files = [f for f in resume_folder.iterdir() if f.suffix.lower() in (".pdf", ".docx")]
+    resume_files = [f for f in resume_folder.iterdir() if f.suffix.lower() in (".pdf", ".docx", ".txt")]
 
     if not resume_files:
         print(f"\n[!] No resumes found in '{resume_folder}'. Add PDF/DOCX files and re-run.")
@@ -219,10 +245,18 @@ def main():
         result = final_score(job, parsed)
         time.sleep(3)
 
-        print(f"    -> Score : {result.score}%\n")
+        if result.score <= 1:
+            display_score = result.score * 100
+        elif result.score <= 10:
+            display_score = result.score * 10
+        else:
+            display_score = result.score
+        
+        display_score = min(max(display_score, 0), 100)
+        print(f"    -> Score : {display_score:.0f}%\n")
         all_results.append({
             "name":    parsed.name or file_path.stem,
-            "score":   result.score,
+            "score":   display_score,
             "details": result.details,
         })
 

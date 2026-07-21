@@ -1,0 +1,27 @@
+Senior Full-Stack Engineer — TechScale Inc.
+
+We're seeking a Senior Full-Stack Engineer to build and scale our next-generation web platform.
+
+Responsibilities:
+- Design and develop scalable full-stack applications using React and Node.js
+- Build and maintain microservices architecture handling 10M+ API requests daily
+- Implement real-time features using WebSockets and event-driven architecture
+- Optimize application performance, achieving sub-100ms response times
+- Design database schemas and optimize queries for PostgreSQL and MongoDB
+- Implement CI/CD pipelines and infrastructure as code (Terraform)
+- Conduct code reviews and mentor junior developers
+
+Required Qualifications:
+- 5+ years of experience in full-stack web development
+- Strong proficiency in React, TypeScript, and modern frontend practices
+- Expert-level Node.js/Express or Python/FastAPI backend development
+- Experience with relational databases (PostgreSQL) and NoSQL (MongoDB, Redis)
+- Proficiency with AWS services (EC2, S3, Lambda, ECS, RDS)
+- Strong understanding of RESTful APIs and GraphQL
+- Experience with containerization (Docker) and orchestration (Kubernetes)
+
+Preferred Qualifications:
+- Experience with real-time applications (WebSockets, Server-Sent Events)
+- Knowledge of message queues (RabbitMQ, Kafka, SQS)
+- Experience with Elasticsearch for search functionality
+- Contributions to open-source projects
